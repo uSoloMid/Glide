@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Glide</AssemblyName>
+    <RootNamespace>Glide.UI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- DPI awareness comes from app.manifest (PerMonitorV2); the WinForms
+         analyzer prefers ApplicationHighDpiMode but that path only applies
+         to WinForms bootstrap, not this WPF app. -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glide.Common\Glide.Common.csproj" />
+    <ProjectReference Include="..\Glide.Settings\Glide.Settings.csproj" />
+    <ProjectReference Include="..\Glide.Input\Glide.Input.csproj" />
+    <ProjectReference Include="..\Glide.Graphics\Glide.Graphics.csproj" />
+    <ProjectReference Include="..\Glide.Engine\Glide.Engine.csproj" />
+  </ItemGroup>
+</Project>
